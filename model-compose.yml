@@ -1,0 +1,146 @@
+controller:
+  adapter:
+    type: http-server
+    port: ${env.PORT | 8080}
+    base_path: /api
+  webui:
+    driver: gradio
+    port: ${env.SERVER_PORT | 8081}
+
+workflows:
+  - id: generate
+    title: Qwen-Image 2.1 + P-Q-Image 6-step
+    description: Generate a 1024x1024 image from a text prompt in 6 steps with PrunaAI's v0.2 distilled LoRA.
+    job:
+      component: qwen-image-pruna
+      input: ${input}
+      output: ${output}
+    output: ${jobs.__job__.output}
+
+  - id: generate-without-qwen-image-pruna
+    title: Qwen-Image 2.1 base, 40 steps
+    description: Generate the same prompt with the base model at its default 40 steps, without the LoRA.
+    job:
+      component: qwen-image
+      input: ${input}
+      output: ${output}
+    output: ${jobs.__job__.output}
+
+  - id: generate-nf4
+    title: Qwen-Image 2.1 + P-Q-Image 6-step, NF4 512px
+    description: 6-step LoRA generation at 512x512 with the transformer and text encoder quantized to NF4, for 6 to 16 GB devices.
+    job:
+      component: qwen-image-pruna-nf4
+      input: ${input}
+      output: ${output}
+    output: ${jobs.__job__.output}
+
+components:
+  - id: qwen-image-pruna
+    type: model
+    task: image-generation
+    driver: huggingface
+    architecture: qwen-image
+    device: ${env.DEVICE | cuda}
+    model:
+      provider: huggingface
+      repository: Qwen/Qwen-Image-2.1
+    peft_adapter:
+      - type: lora
+        name: pruna
+        model:
+          provider: huggingface
+          repository: PrunaAI/P-Q-Image-2.1
+          filename: p_q_image_2.1_6_steps_v0.2.safetensors
+        weight: 1.0
+    # v0.2 sigmas are unshifted; the scheduler applies the resolution-dependent shift.
+    scheduler:
+      options:
+        use_dynamic_shifting: true
+        shift_terminal: null
+    cpu_offload: ${env.CPU_OFFLOAD | model}
+    max_concurrent_count: 1
+    runtime:
+      type: virtualenv
+      driver: python
+      path: .venv/qwen-image-pruna
+    action:
+      prompt: ${input.prompt as text}
+      image: ${input.image as image}
+      width: 1024
+      height: 1024
+      seed: ${input.seed as integer}
+      params:
+        inference_steps: 6
+        sigmas: [ 1.0, 0.925, 0.85, 0.625, 0.375, 0.125 ]
+        true_cfg_scale: 1.0
+      output: ${result as image/png}
+
+  - id: qwen-image-pruna-nf4
+    type: model
+    task: image-generation
+    driver: huggingface
+    architecture: qwen-image
+    device: ${env.DEVICE | cuda}
+    model:
+      provider: huggingface
+      repository: Qwen/Qwen-Image-2.1
+    peft_adapter:
+      - type: lora
+        name: pruna
+        model:
+          provider: huggingface
+          repository: PrunaAI/P-Q-Image-2.1
+          filename: p_q_image_2.1_6_steps_v0.2.safetensors
+        weight: 1.0
+    # v0.2 sigmas are unshifted; the scheduler applies the resolution-dependent shift.
+    scheduler:
+      options:
+        use_dynamic_shifting: true
+        shift_terminal: null
+    quantization:
+      type: nf4
+      compute_dtype: bfloat16
+    cpu_offload: ${env.CPU_OFFLOAD | model}
+    max_concurrent_count: 1
+    runtime:
+      type: virtualenv
+      driver: python
+      path: .venv/qwen-image-pruna-nf4
+    action:
+      prompt: ${input.prompt as text}
+      image: ${input.image as image}
+      width: 512
+      height: 512
+      seed: ${input.seed as integer}
+      params:
+        inference_steps: 6
+        sigmas: [ 1.0, 0.925, 0.85, 0.625, 0.375, 0.125 ]
+        true_cfg_scale: 1.0
+      output: ${result as image/png}
+
+  - id: qwen-image
+    type: model
+    task: image-generation
+    driver: huggingface
+    architecture: qwen-image
+    device: ${env.DEVICE | cuda}
+    model:
+      provider: huggingface
+      repository: Qwen/Qwen-Image-2.1
+    cpu_offload: ${env.CPU_OFFLOAD | model}
+    max_concurrent_count: 1
+    runtime:
+      type: virtualenv
+      driver: python
+      path: .venv/qwen-image
+    action:
+      prompt: ${input.prompt as text}
+      image: ${input.image as image}
+      width: 1024
+      height: 1024
+      seed: ${input.seed as integer}
+      params:
+        inference_steps: 40
+        true_cfg_scale: 1.0
+      output: ${result as image/png}
