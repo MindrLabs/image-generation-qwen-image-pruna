@@ -9,8 +9,6 @@
 | 基础模型 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) |
 | LoRA | [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1) 的 `p_q_image_2.1_6_steps_v0.2.safetensors` |
 
-## 演示
-
 ![在网页界面输入黑白照片提示词并运行后，出现一张女孩在秋千上抱着泰迪熊的黑白照片。](docs/images/demo.gif)
 
 ## 快速开始

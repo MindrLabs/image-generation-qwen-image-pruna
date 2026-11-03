@@ -9,8 +9,6 @@
 | 베이스 모델 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) |
 | LoRA | [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1)의 `p_q_image_2.1_6_steps_v0.2.safetensors` |
 
-## 데모
-
 ![웹 UI에 흑백 사진 프롬프트를 넣고 실행하자 그네에 앉아 곰인형을 안은 소녀의 흑백 사진이 나옵니다.](docs/images/demo.gif)
 
 ## 빠른 시작

@@ -9,8 +9,6 @@ This service takes text and makes an image with the P-Q-Image-2.1 6-steps v0.2 L
 | Base model | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) |
 | LoRA | `p_q_image_2.1_6_steps_v0.2.safetensors` from [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1) |
 
-## Demo
-
 ![A black-and-white photo prompt goes into the web UI, and a black-and-white photo of a girl hugging a teddy bear on a swing comes out.](docs/images/demo.gif)
 
 ## Quick Start
