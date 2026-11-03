@@ -1,4 +1,4 @@
-[English](README.md) · [한국어](README.ko.md) · [中文](README.zh-cn.md)
+[English](README.md) · [한국어](README.ko.md) · [中文](README.zh.md)
 
 # image-generation-qwen-image-pruna
 
@@ -8,18 +8,6 @@
 | :---: | --- |
 | 베이스 모델 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) |
 | LoRA | [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1)의 `p_q_image_2.1_6_steps_v0.2.safetensors` |
-
-## 목차
-
-- [데모](#데모)
-- [빠른 시작](#빠른-시작)
-- [요약](#요약)
-- [측정 환경](#측정-환경)
-- [결과](#결과)
-  - [텍스트로 이미지 생성](#텍스트로-이미지-생성)
-- [추천](#추천)
-- [한계와 측정하지 않은 것](#한계와-측정하지-않은-것)
-- [라이선스](#라이선스)
 
 ## 데모
 

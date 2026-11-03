@@ -1,4 +1,4 @@
-[English](README.md) · [한국어](README.ko.md) · [中文](README.zh-cn.md)
+[English](README.md) · [한국어](README.ko.md) · [中文](README.zh.md)
 
 # image-generation-qwen-image-pruna
 
@@ -9,23 +9,11 @@ This service takes text and makes an image with the P-Q-Image-2.1 6-steps v0.2 L
 | Base model | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) |
 | LoRA | `p_q_image_2.1_6_steps_v0.2.safetensors` from [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1) |
 
-## Contents
-
-- [Demo](#demo)
-- [Quick start](#quick-start)
-- [Summary](#summary)
-- [Setup](#setup)
-- [Results](#results)
-  - [Text to image](#text-to-image)
-- [Recommendations](#recommendations)
-- [Limitations and what we did not measure](#limitations-and-what-we-did-not-measure)
-- [License](#license)
-
 ## Demo
 
 ![A black-and-white photo prompt goes into the web UI, and a black-and-white photo of a girl hugging a teddy bear on a swing comes out.](docs/images/demo.gif)
 
-## Quick start
+## Quick Start
 
 It needs [model-compose](https://github.com/hanyeol/model-compose) 0.4.121 or later.
 
@@ -77,7 +65,7 @@ On the DGX Spark, P-Q-Image-2.1 6-steps v0.2 took 10.9 seconds per image against
 
 ## Results
 
-### Text to image
+### Text to Image
 
 The composition and pose of three black-and-white daily-life scenes of a teenage girl were written as English prompts and generated with three seeds.
 
@@ -113,9 +101,9 @@ Measured on the DGX Spark, the RTX 4090 and the MacBook M1 16GB; the RTX 4050 La
 
 - Use P-Q-Image-2.1 6-steps v0.2 when speed matters. On the DGX Spark it took 10.9 seconds per image, shorter than the base model's 51.3 seconds.
 
-## Limitations and what we did not measure
+## Limitations and What We Did Not Measure
 
-### Measurement conditions
+### Measurement Conditions
 
 | Where | Detail |
 | :---: | --- |
@@ -126,7 +114,7 @@ Measured on the DGX Spark, the RTX 4090 and the MacBook M1 16GB; the RTX 4050 La
 | RTX 4090 | The BF16 workflows run with model CPU offload because the pipeline does not fit in 24 GB of VRAM, so each request also spends time moving modules between system memory and the GPU. |
 | DGX Spark | The workflows run with CPU offload turned off, because its memory is shared between the CPU and the GPU. |
 
-### Not measured
+### Not Measured
 
 | What | Why |
 | :---: | --- |
@@ -135,7 +123,7 @@ Measured on the DGX Spark, the RTX 4090 and the MacBook M1 16GB; the RTX 4050 La
 | Lighting under prompt control | Lighting was not judged in the prompt-control check. |
 | Width and height of generated images | They were not judged. |
 
-### Model card claims we did not check
+### Model Card Claims We Did Not Check
 
 - The adapters make generation up to 6.3x faster than the base model.
 - Only the adapter's own step count and sigma schedule are supported, not other steps, schedules, or CFG values.
