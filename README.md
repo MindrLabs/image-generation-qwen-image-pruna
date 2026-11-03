@@ -4,11 +4,6 @@
 
 This service takes text and makes an image with the P-Q-Image-2.1 6-steps v0.2 LoRA on top of Qwen/Qwen-Image-2.1.
 
-| Part | Weights |
-| :---: | --- |
-| Base model | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) |
-| LoRA | `p_q_image_2.1_6_steps_v0.2.safetensors` from [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1) |
-
 ![A black-and-white photo prompt goes into the web UI, and a black-and-white photo of a girl hugging a teddy bear on a swing comes out.](docs/images/demo.gif)
 
 ## Quick Start
@@ -55,11 +50,11 @@ On the DGX Spark, P-Q-Image-2.1 6-steps v0.2 took 10.9 seconds per image against
 
 ## Setup
 
-| Setting | Inputs | Checkpoint | model-compose | Statistics |
+| Setting | Inputs | Weights | model-compose | Statistics |
 | :---: | --- | --- | --- | --- |
-| P-Q-Image-2.1 6-steps v0.2 | 3 inputs × 1 repeat | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) | 0.4.121 | 95% intervals, speed differences under 1.05× are not called |
+| P-Q-Image-2.1 6-steps v0.2 | 3 inputs × 1 repeat | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) + `p_q_image_2.1_6_steps_v0.2.safetensors` from [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1) | 0.4.121 | 95% intervals, speed differences under 1.05× are not called |
 | Base model, 40 steps | 3 inputs × 1 repeat | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) | 0.4.121 | 95% intervals, speed differences under 1.05× are not called |
-| P-Q-Image-2.1 6-steps v0.2, NF4 512px | 3 inputs × 3 repeats | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) | 0.4.121 | 95% intervals, speed differences under 1.05× are not called |
+| P-Q-Image-2.1 6-steps v0.2, NF4 512px | 3 inputs × 3 repeats | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) + `p_q_image_2.1_6_steps_v0.2.safetensors` from [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1) | 0.4.121 | 95% intervals, speed differences under 1.05× are not called |
 
 ## Results
 

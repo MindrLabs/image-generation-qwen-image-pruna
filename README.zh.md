@@ -4,11 +4,6 @@
 
 这个服务接收文字，在 Qwen/Qwen-Image-2.1 上加 P-Q-Image-2.1 6-steps v0.2 LoRA 生成图像。
 
-| 部分 | 权重 |
-| :---: | --- |
-| 基础模型 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) |
-| LoRA | [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1) 的 `p_q_image_2.1_6_steps_v0.2.safetensors` |
-
 ![在网页界面输入黑白照片提示词并运行后，出现一张女孩在秋千上抱着泰迪熊的黑白照片。](docs/images/demo.gif)
 
 ## 快速开始
@@ -55,11 +50,11 @@ API 地址为 http://localhost:8080/api ，Gradio 界面地址为 http://localho
 
 ## 测量环境
 
-| 设置 | 输入 | 检查点 | model-compose | 统计 |
+| 设置 | 输入 | 权重 | model-compose | 统计 |
 | :---: | --- | --- | --- | --- |
-| P-Q-Image-2.1 6-steps v0.2 | 3 个输入 × 1 次重复 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) | 0.4.121 | 95% 置信区间，低于 1.05× 的速度差异不作判定 |
+| P-Q-Image-2.1 6-steps v0.2 | 3 个输入 × 1 次重复 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) + [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1) 的 `p_q_image_2.1_6_steps_v0.2.safetensors` | 0.4.121 | 95% 置信区间，低于 1.05× 的速度差异不作判定 |
 | 基础模型 40步 | 3 个输入 × 1 次重复 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) | 0.4.121 | 95% 置信区间，低于 1.05× 的速度差异不作判定 |
-| P-Q-Image-2.1 6-steps v0.2, NF4 512px | 3 个输入 × 3 次重复 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) | 0.4.121 | 95% 置信区间，低于 1.05× 的速度差异不作判定 |
+| P-Q-Image-2.1 6-steps v0.2, NF4 512px | 3 个输入 × 3 次重复 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) + [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1) 的 `p_q_image_2.1_6_steps_v0.2.safetensors` | 0.4.121 | 95% 置信区间，低于 1.05× 的速度差异不作判定 |
 
 ## 结果
 

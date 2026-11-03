@@ -4,11 +4,6 @@
 
 이 서비스는 글을 받아 Qwen/Qwen-Image-2.1에 P-Q-Image-2.1 6-steps v0.2 LoRA를 얹어 이미지를 만듭니다.
 
-| 구분 | 가중치 |
-| :---: | --- |
-| 베이스 모델 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) |
-| LoRA | [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1)의 `p_q_image_2.1_6_steps_v0.2.safetensors` |
-
 ![웹 UI에 흑백 사진 프롬프트를 넣고 실행하자 그네에 앉아 곰인형을 안은 소녀의 흑백 사진이 나옵니다.](docs/images/demo.gif)
 
 ## 빠른 시작
@@ -55,11 +50,11 @@ DGX Spark에서 P-Q-Image-2.1 6-steps v0.2는 한 장에 10.9초 걸려 베이�
 
 ## 측정 환경
 
-| 설정 | 입력 | 체크포인트 | model-compose | 통계 |
+| 설정 | 입력 | 가중치 | model-compose | 통계 |
 | :---: | --- | --- | --- | --- |
-| P-Q-Image-2.1 6-steps v0.2 | 입력 3개 × 반복 1회 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) | 0.4.121 | 95% 구간, 1.05배 미만 속도 차이는 판정 제외 |
+| P-Q-Image-2.1 6-steps v0.2 | 입력 3개 × 반복 1회 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) + [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1)의 `p_q_image_2.1_6_steps_v0.2.safetensors` | 0.4.121 | 95% 구간, 1.05배 미만 속도 차이는 판정 제외 |
 | 베이스 모델 40단계 | 입력 3개 × 반복 1회 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) | 0.4.121 | 95% 구간, 1.05배 미만 속도 차이는 판정 제외 |
-| P-Q-Image-2.1 6-steps v0.2, NF4 512px | 입력 3개 × 반복 3회 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) | 0.4.121 | 95% 구간, 1.05배 미만 속도 차이는 판정 제외 |
+| P-Q-Image-2.1 6-steps v0.2, NF4 512px | 입력 3개 × 반복 3회 | [Qwen/Qwen-Image-2.1](https://huggingface.co/Qwen/Qwen-Image-2.1/tree/d26bb61231c349cf6b7896fa83353113880e1ba3) + [PrunaAI/P-Q-Image-2.1](https://huggingface.co/PrunaAI/P-Q-Image-2.1)의 `p_q_image_2.1_6_steps_v0.2.safetensors` | 0.4.121 | 95% 구간, 1.05배 미만 속도 차이는 판정 제외 |
 
 ## 결과
 
