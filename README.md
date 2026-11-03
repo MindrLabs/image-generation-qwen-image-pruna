@@ -83,15 +83,15 @@ Measured on the DGX Spark, the RTX 4090 and the MacBook M1 16GB; the RTX 4050 La
 | Base model, 40 steps | RTX 4090 | 62.7 / 62.7 / 62.6 | 17530 (VRAM) | Model CPU offload |
 | P-Q-Image-2.1 6-steps v0.2, NF4 512px | MacBook M1 16GB | 115 / 116 / 115 | 15581 (footprint) | NF4 quantization |
 
-![bollard-night, RTX 4090](docs/images/shared/generate-v6-vs-base.nvidia-rtx-4090-24gb.bollard-night.jpg)
+![bollard-night, RTX 4090](docs/images/text-to-image-bollard-night.jpg)
 
 > Black-and-white candid daily-life photograph, photorealistic, at night under harsh flash. An Asian teenage girl in a school uniform — dark knit sweater, white collar, tie, pleated skirt, white slouch socks — sits slumped on the gravel ground, leaning back against a curved metal parking bollard, knees bent, head bowed so her black bob and bangs hide her face, utterly exhausted. Her school bag lies spilled open beside her with a small plush charm. Wooden fence and concrete curb behind, painted parking lines on the asphalt, flash-lit grainy snapshot, lonely late-night mood.
 
-![cat-window, RTX 4090](docs/images/shared/generate-v6-vs-base.nvidia-rtx-4090-24gb.cat-window.jpg)
+![cat-window, RTX 4090](docs/images/text-to-image-cat-window.jpg)
 
 > Black-and-white candid daily-life photograph, photorealistic. An Asian teenage girl with a shoulder-length bob, seen from behind at a three-quarter angle in a dark jacket, standing below a ground-floor window and tilting her face up toward a black-and-white cat walking along the window ledge behind a white safety net. Rough plaster wall with faded graffiti, dusk light, soft film grain, quiet melancholic mood.
 
-![swing-teddy, RTX 4090](docs/images/shared/generate-v6-vs-base.nvidia-rtx-4090-24gb.swing-teddy.jpg)
+![swing-teddy, RTX 4090](docs/images/text-to-image-swing-teddy.jpg)
 
 > Black-and-white candid daily-life photograph, photorealistic. An Asian teenage girl with a black bob and blunt bangs sits on a playground swing, hugging a large teddy bear to her chest with her cheek resting on its head, gazing off to the side. Oversized grey hoodie, plaid skirt, black backpack strap, swing chains in the foreground, empty playground and grass behind, overcast soft light, film grain, wistful mood.
 
