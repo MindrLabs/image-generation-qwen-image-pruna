@@ -15,6 +15,7 @@ workflows:
       component: qwen-image-pruna
       input: ${input}
       output: ${output}
+
     output: ${jobs.__job__.output}
 
   - id: generate-without-qwen-image-pruna
@@ -24,6 +25,7 @@ workflows:
       component: qwen-image
       input: ${input}
       output: ${output}
+
     output: ${jobs.__job__.output}
 
   - id: generate-nf4
@@ -33,6 +35,7 @@ workflows:
       component: qwen-image-pruna-nf4
       input: ${input}
       output: ${output}
+
     output: ${jobs.__job__.output}
 
 components:
@@ -53,7 +56,6 @@ components:
           repository: PrunaAI/P-Q-Image-2.1
           filename: p_q_image_2.1_6_steps_v0.2.safetensors
         weight: 1.0
-    # v0.2 sigmas are unshifted; the scheduler applies the resolution-dependent shift.
     scheduler:
       options:
         use_dynamic_shifting: true
@@ -93,7 +95,6 @@ components:
           repository: PrunaAI/P-Q-Image-2.1
           filename: p_q_image_2.1_6_steps_v0.2.safetensors
         weight: 1.0
-    # v0.2 sigmas are unshifted; the scheduler applies the resolution-dependent shift.
     scheduler:
       options:
         use_dynamic_shifting: true
