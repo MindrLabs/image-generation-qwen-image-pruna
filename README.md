@@ -59,7 +59,7 @@ Measured with model-compose 0.4.121. Statistics use 95% intervals, and speed dif
 
 ## Results
 
-### Text to image
+### Text to Image
 
 The composition and pose of three black-and-white daily-life scenes were written as English prompts and generated with three seeds.
 
@@ -79,15 +79,15 @@ We measured on MacBook M1 16GB, DGX Spark, RTX 4090. Each cell is the median ove
 | Base model, 40 steps | DGX Spark | 51.3 / 51.2 / 51.3 | 39515 (VRAM) |
 | Base model, 40 steps | RTX 4090 | 62.7 / 62.7 / 62.6 | 17530 (VRAM) |
 
-![Text to image](docs/images/fast-text-to-image-bollard-night.jpg)
+![Text to Image](docs/images/fast-text-to-image-bollard-night.jpg)
 
 > Black-and-white candid daily-life photograph, photorealistic, at night under harsh flash. An Asian teenage girl in a school uniform — dark knit sweater, white collar, tie, pleated skirt, white slouch socks — sits slumped on the gravel ground, leaning back against a curved metal parking bollard, knees bent, head bowed so her black bob and bangs hide her face, utterly exhausted. Her school bag lies spilled open beside her with a small plush charm. Wooden fence and concrete curb behind, painted parking lines on the asphalt, flash-lit grainy snapshot, lonely late-night mood.
 
-![Text to image](docs/images/fast-text-to-image-cat-window.jpg)
+![Text to Image](docs/images/fast-text-to-image-cat-window.jpg)
 
 > Black-and-white candid daily-life photograph, photorealistic. An Asian teenage girl with a shoulder-length bob, seen from behind at a three-quarter angle in a dark jacket, standing below a ground-floor window and tilting her face up toward a black-and-white cat walking along the window ledge behind a white safety net. Rough plaster wall with faded graffiti, dusk light, soft film grain, quiet melancholic mood.
 
-![Text to image](docs/images/fast-text-to-image-swing-teddy.jpg)
+![Text to Image](docs/images/fast-text-to-image-swing-teddy.jpg)
 
 > Black-and-white candid daily-life photograph, photorealistic. An Asian teenage girl with a black bob and blunt bangs sits on a playground swing, hugging a large teddy bear to her chest with her cheek resting on its head, gazing off to the side. Oversized grey hoodie, plaid skirt, black backpack strap, swing chains in the foreground, empty playground and grass behind, overcast soft light, film grain, wistful mood.
 
